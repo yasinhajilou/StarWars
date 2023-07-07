@@ -79,16 +79,16 @@ class StarWarsGame : ApplicationAdapter() {
             renderRandomBullet()
         }
 
-//        val iter: MutableIterator<Rectangle> = bulletsArray.iterator()
-//        while (iter.hasNext()) {
-//            val bullet = iter.next()
-//            bullet.x -= 200 * Gdx.graphics.deltaTime
-//            if (bullet.x < 0) iter.remove()
-//            if (bullet.overlaps(pilotRect)) {
-//                laserSound!!.play()
-//                iter.remove()
-//            }
-//        }
+        val iter: MutableIterator<Rectangle> = bulletsArray.iterator()
+        while (iter.hasNext()) {
+            val bullet = iter.next()
+            bullet.x -= 200 * Gdx.graphics.deltaTime
+            if (bullet.x < 0) iter.remove()
+            if (bullet.overlaps(pilotRect)) {
+                laserSound!!.play()
+                iter.remove()
+            }
+        }
     }
 
     private fun renderRandomBullet() {
