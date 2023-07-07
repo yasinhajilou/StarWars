@@ -42,7 +42,7 @@ class StarWarsGame : ApplicationAdapter() {
         pilotRect!!.x = (800f / 2) - (256f / 2f)
         pilotRect!!.y = 20f
 
-        pilotTexture = Texture(Gdx.files.internal("pilot1.png"))
+        pilotTexture = Texture(Gdx.files.internal("pilot.png"))
         bulletTexture = Texture(Gdx.files.internal("bullet.png"))
 
         laserSound = Gdx.audio.newSound(Gdx.files.internal("laser.wav"))
@@ -79,21 +79,21 @@ class StarWarsGame : ApplicationAdapter() {
             renderRandomBullet()
         }
 
-        val iter: MutableIterator<Rectangle> = bulletsArray.iterator()
-        while (iter.hasNext()) {
-            val bullet = iter.next()
-            bullet.x -= 200 * Gdx.graphics.deltaTime
-            if (bullet.x < 0) iter.remove()
-            if (bullet.overlaps(pilotRect)) {
-                laserSound!!.play()
-                iter.remove()
-            }
-        }
+//        val iter: MutableIterator<Rectangle> = bulletsArray.iterator()
+//        while (iter.hasNext()) {
+//            val bullet = iter.next()
+//            bullet.x -= 200 * Gdx.graphics.deltaTime
+//            if (bullet.x < 0) iter.remove()
+//            if (bullet.overlaps(pilotRect)) {
+//                laserSound!!.play()
+//                iter.remove()
+//            }
+//        }
     }
 
     private fun renderRandomBullet() {
         val bullet = Rectangle()
-        bullet.x = 800f
+        bullet.x = 400f
         bullet.y = MathUtils.random(0, 480).toFloat()
         bullet.width = 64f
         bullet.height = 64f
