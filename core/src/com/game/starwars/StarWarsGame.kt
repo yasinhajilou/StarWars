@@ -93,7 +93,7 @@ class StarWarsGame : ApplicationAdapter() {
 
     private fun renderRandomBullet() {
         val bullet = Rectangle()
-        bullet.x = 400f
+        bullet.x = 800f
         bullet.y = MathUtils.random(0, 480).toFloat()
         bullet.width = 64f
         bullet.height = 64f
